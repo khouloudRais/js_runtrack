@@ -1,0 +1,13 @@
+/* Style par défaut */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Style activé par le code Konami */
+.la-plateforme {
+    background-color: #1e04e6; /* Rouge */
+    color: white;
+}
