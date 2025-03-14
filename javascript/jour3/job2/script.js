@@ -26,6 +26,7 @@ function shuffleImages() {
         const newSrc = "image/" + shuffledOrder[index];  // Assurez-vous que le chemin est correct
         console.log('Nouvelle source pour l\'image:', newSrc);  // Afficher la nouvelle source
         img.src = newSrc;
+        img.dataset.image = shuffledOrder[index]; // On stocke l'image dans un attribut data
     });
 }
 
@@ -35,11 +36,11 @@ function checkOrder() {
 
     // Vérifier chaque image
     images.forEach((img, index) => {
-        // Afficher l'URL de l'image pour vérifier qu'elle correspond bien à l'ordre correct
-        console.log("Vérification de l'image à l'index", index, img.src);
-        
-        // Vérifier le nom du fichier sans la partie du chemin complet
-        if (img.src.split('/').pop() !== correctOrder[index]) {
+        // Récupérer le nom de fichier à partir du chemin de l'image
+        const imageName = img.src.split('/').pop();
+
+        // Vérifier si l'image est dans le bon ordre
+        if (imageName !== correctOrder[index]) {
             isCorrect = false;
         }
     });
@@ -64,4 +65,3 @@ shuffleBtn.addEventListener('click', () => {
 images.forEach(img => {
     img.addEventListener('click', checkOrder);
 });
-

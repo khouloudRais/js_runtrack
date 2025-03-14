@@ -27,6 +27,30 @@
         .message.lose {
             color: red;
         }
+
+
+        #imageContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+
+#dropContainers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropContainer {
+    width: 100px;
+    height: 100px;
+    border: 1px dashed black;
+    background-color: lightblue;
+    margin: 5px;
+}
+
+
     </style>
 </head>
 <body>
@@ -45,6 +69,29 @@
         <img src="image/arc5.png" alt="arc5" class="image" id="img5">
         <img src="image/arc6.png" alt="arc6" class="image" id="img6">
     </div>
+
+
+    <div id="imageContainer">
+        <div class="image" id="image1" draggable="true"></div>
+        <div class="image" id="image2" draggable="true"></div>
+        <div class="image" id="image3" draggable="true"></div>
+        <div class="image" id="image4" draggable="true"></div>
+        <div class="image" id="image5" draggable="true"></div>
+        <div class="image" id="image6" draggable="true"></div>
+    </div>
+    
+    <div id="dropContainers">
+        <div class="dropContainer" id="container1"></div>
+        <div class="dropContainer" id="container2"></div>
+        <div class="dropContainer" id="container3"></div>
+        <div class="dropContainer" id="container4"></div>
+        <div class="dropContainer" id="container5"></div>
+        <div class="dropContainer" id="container6"></div>
+    </div>
+    
+    <button id="shuffleBtn">Mélanger</button>
+    <p id="message"></p>
+    
 
     <!-- Message de victoire ou de défaite -->
     <div class="message" id="message"></div>
