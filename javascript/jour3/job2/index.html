@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc-en-ciel mélangé</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .image {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .message {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .message.win {
+            color: green;
+        }
+        .message.lose {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Reconstituez l'arc-en-ciel</h1>
+
+    <!-- Bouton pour mélanger les images -->
+    <button id="shuffleBtn">Mélanger les images</button>
+
+    
+    <div class="image-container" id="imageContainer">
+        <img src="image/arc1.png" alt="arc1" class="image" id="img1">
+        <img src="image/arc2.png" alt="arc2" class="image" id="img2">
+        <img src="image/arc3.png" alt="arc3" class="image" id="img3">
+        <img src="image/arc4.png" alt="arc4" class="image" id="img4">
+        <img src="image/arc5.png" alt="arc5" class="image" id="img5">
+        <img src="image/arc6.png" alt="arc6" class="image" id="img6">
+    </div>
+
+    <!-- Message de victoire ou de défaite -->
+    <div class="message" id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
