@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Récupérer une expression</title>
+</head>
+<body>
+
+  <!-- Crée un bouton avec l'ID "button" -->
+  <button id="button">Cliquez pour voir mon expression favorite</button>
+
+  <!-- Un endroit où le texte sera affiché -->
+  <div id="expression"></div>
+
+  <script>
+    // On récupère l'élément bouton et celui où on affichera l'expression
+    const button = document.getElementById("button");
+    const expressionContainer = document.getElementById("expression");
+
+    // Lorsqu'on clique sur le bouton, on récupère le contenu du fichier
+    button.addEventListener("click", () => {
+      // Utilisation de fetch pour récupérer le contenu du fichier
+      fetch('expression.txt')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur lors du chargement du fichier.");
+          }
+          return response.text(); // On prend le texte du fichier
+        })
+        .then(data => {
+          // On crée un paragraphe et on y place le texte récupéré
+          const paragraph = document.createElement("p");
+          paragraph.textContent = data;  // Le contenu du fichier
+          expressionContainer.appendChild(paragraph); // On insère le paragraphe dans le corps
+        })
+        .catch(error => {
+          console.error("Erreur:", error);
+        });
+    });
+  </script>
+
+</body>
+</html>
